@@ -5,6 +5,7 @@ import Announcement from "../Componantes/Announcement";
 import Newsletter from "../Componantes/Newsletter";
 import Footer from "../Componantes/Footer";
 import { useParams } from "react-router";
+import { useState, useEffect} from "react";
 
 const Container = styled.div`
 @media only screen and (max-width: 500px) {
@@ -93,7 +94,8 @@ const FilterSize = styled.select`
   padding: 5px;
 `;
 
-const FilterSizeOption = styled.option``;
+const FilterSizeOption = styled.option`
+`;
 
 const AddContainer = styled.div`
   width: 50%;
@@ -103,7 +105,7 @@ const AddContainer = styled.div`
   @media only screen and (max-width: 500px) {
     width: 100%;
   }
-  
+
 `;
 
 const AmountContainer = styled.div`
@@ -133,31 +135,37 @@ const Button = styled.button`
   &:hover{
       background-color: #f8f4f4;
   }
+
 `;
 
 const Product = () => {
   const Prodact = useParams();
   console.log(Prodact.id);
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [data, setData] = React.useState([]);
-
-  React.useEffect(() => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
+  useEffect(() => {
     const url = `https://fakestoreapi.com/products/${Prodact.id}`;
     fetch(url)
       .then((response) => response.json())
       .then((json) => setData(json))
       .catch((error) => console.log(error));
-  }, []);
-
-  React.useEffect(() => {
+  }, [Prodact.id]);
+  useEffect(() => {
     if (data.length !== 0) {
       setIsLoading(false);
     }
-    console.log(data)
-    
+    console.log(data);
+
   }, [data]);
+  
   return (
-    <Container>
+    <div>
+    {isLoading ? (
+      <h1>
+        loading ...
+      </h1>
+    ) : (
+      <Container>
       <Announcement />
       <Wrapper>
         <ImgContainer>
@@ -200,7 +208,11 @@ const Product = () => {
       </Wrapper>
       <Newsletter />
       <Footer />
-    </Container>
+      </Container>
+      
+    )}
+      
+    </div>
   );
 };
 

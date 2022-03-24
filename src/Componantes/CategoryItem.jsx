@@ -1,15 +1,25 @@
 import styled from 'styled-components'
+import {
+  Link
+} from "react-router-dom";
 
 const Container = styled.div`
- flex:1;
- width:100%;
- margin:3px;
- height: 100%;
- position: relative;
+flex: 1;
+  margin: 5px;
+  min-width: 280px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5fbfd;
+  position: relative;
 `
 const Image = styled.img`
-    width:100%;
-    height: 100%;
+    height: 75%;
+    width:70%;
+    padding-left:15%;
+    text-align:center;
+    text-align:center;
     @media only screen and (max-width: 500px) {
       height: 55vh;
      }
@@ -26,7 +36,7 @@ const Info = styled.div`
     align-items: center;
     justify-content: center;
 `
-const Title = styled.h2`
+const Category = styled.h2`
     color:white;
     margin-bottom: 20px;
 `
@@ -41,14 +51,16 @@ const Button = styled.button`
 `
 const CategoryItem = ({Item}) => {
   return (
-
-    <Container>
-    <Image src={Item.img}/>
-    <Info>
-      <Title>{Item.title}</Title>
-        <Button>Shop Now</Button>
-    </Info>
-    </Container>
+    
+      <Container>
+        <Link  to={`/ProductList/${Item.category}`}>
+          <Image src={Item.img}/>
+          <Info>
+            <Category>{Item.category}</Category>
+            <Button>Shop Now</Button>
+          </Info>
+        </Link>
+      </Container>
   )
 }
 

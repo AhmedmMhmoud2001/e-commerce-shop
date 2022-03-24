@@ -24,18 +24,27 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "SHIRT STYLE!",
+      img: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      title: "T-Shirts!",
+      category:"men's clothing"
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "LOUNGEWEAR LOVE",
+      img: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+      title: "Cotton Short",
+      category: "women's clothing"
     },
     {
       id: 3,
-      img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      img: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      title: "White Gold",
+      category: "jewelery"
+    },
+    {
+      id: 4,
+      img: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
       title: "LIGHT JACKETS",
+      category: "electronics"
     },
   ];
   export const popularProducts = [

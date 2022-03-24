@@ -2,9 +2,8 @@ import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
 import Announcement from "../Componantes/Announcement";
 import Footer from "../Componantes/Footer";
-import React, { useState, useEffect } from 'react';
-const Container = styled.div``;
-
+const Container = styled.div`
+`;
 const Wrapper = styled.div`
   padding: 20px;
   @media only screen and (max-width: 500px) {

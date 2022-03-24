@@ -16,7 +16,8 @@ import Cart from '../Pages/Cart';
 import ProductList from '../Pages/ProductList';
 import Product from '../Pages/Product';
 import Home from '../Pages/Home';
-import { mobile } from "../responsive";
+import { mobile } from "../responsive"; 
+
 
 
 const Container = styled.div`
@@ -91,13 +92,14 @@ const MenuItem = styled.div`
   margin-left: 25px;
 
 `
-const Navbar = () => {
+const Navbar = (props) => {
+  console.log(props)
   return (
     <Router>
       <Container>
         <Wrapper>
           <Left>
-            <Logo>LAMA</Logo>
+            <Logo onClick={props.increase}>LAMA</Logo>
           </Left>
           <Center>
             <Language>EN</Language>
@@ -125,6 +127,7 @@ const Navbar = () => {
           <MenuItem>
           <Link  to="/Cart">
             <Badge badgeContent={4} color="primary">
+               <div> </div>
               <ShoppingCartIcon/>
             </Badge>
           </Link>
@@ -136,6 +139,7 @@ const Navbar = () => {
                 <Route path="/"  element={<Home/>} exact/>
                 <Route path="/Home"  element={<Home/>} exact/>
                     <Route path="/ProductList"  element={<ProductList/>} exact/>
+                    <Route path="/ProductList/:category"  element={<ProductList/>} exact/>
                     <Route path="/Product"  element={<Product/>} exact/>
                     <Route path="/product/:id"  element={<Product/>} exact/>
                     <Route path="/products/:id"  element={<Product/>} exact/>
@@ -146,5 +150,6 @@ const Navbar = () => {
     </Router>
   )
 }
+
 
 export default Navbar

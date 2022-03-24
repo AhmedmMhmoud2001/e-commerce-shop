@@ -75,7 +75,7 @@ const Register = () => {
         </Form>
       </Wrapper>
     </Container>
-  );
+  )
 };
 
 export default Register;

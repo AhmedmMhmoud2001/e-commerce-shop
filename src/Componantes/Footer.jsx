@@ -141,7 +141,7 @@ const Footer = () => {
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
     </Container>
-  );
+  )
 };
 
 export default Footer;

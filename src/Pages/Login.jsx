@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import {useState} from 'react'
-
-
+import {useState} from 'react';
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -64,7 +62,7 @@ const Login = () => {
   const [name, setName] = useState('');
 
   const [password, setPassword] = useState('');
-      
+
   function handleChange(e) {
     e.preventDefault();
     setName(e.target.value);

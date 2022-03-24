@@ -67,7 +67,7 @@ const Newsletter = () => {
         </Button>
       </InputContainer>
     </Container>
-  );
+  )
 };
 
 export default Newsletter;
